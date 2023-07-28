@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment/Naive Bays</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+
+  </head>
+  <body>
+    <main class="container">
+      <div class="row is-center">
+        <div class="col-12 col-8-md col-6-lg">
+          <h1>Sentiment by Naive Bayes</h1>
+          <p>
+            Based off this <a href="https://www.youtube.com/watch?v=tjDceq0qH10&list=PLaZQkZp6WhWyvdiP49JG-rjyTPck_hvEu&index=22">lesson</a> to determine the sentiment of a text.
+          </p>
+          <p>
+            We use the same process to detect the likeness of what you are writing relative to the books <a href="https://www.gutenberg.org/cache/epub/49435/pg49435.txt">Tolstoy</a>(his biography) or <a href='https://www.gutenberg.org/cache/epub/1524/pg1524.txt'>Hamlet</a>.
+          </p>
+          <p>
+            We get the count of each word in the books, find the prior for the books (what percentage of the texts comes from each book), and the total word count for each book. This is saved in a JSON that get's loaded to this page.
+          </p>
+          <p>
+            We then take the text you write, find the probability for each book, and give a score based on the difference between the two probabilities.
+          </p>
+          <p>
+            Word sequence is not considered, it's just a bag of words.
+          </p>
+          <div id="app"></div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

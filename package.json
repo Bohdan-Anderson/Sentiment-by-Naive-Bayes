@@ -1,0 +1,20 @@
+{
+  "name": "sentiment",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --base=/other/course/sentiment/",
+    "preview": "vite preview",
+    "parse": "node ./parseData/parse.js",
+    "publish": "npm run build && scp -r dist/* bohdan@pi:/home/bohdan/phone.other/course/sentiment"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
